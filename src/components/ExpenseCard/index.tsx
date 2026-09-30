@@ -1,6 +1,6 @@
 import { formatCurrency } from "@/shared/utils/formatCurrency";
 import { colors } from "@/styles";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text } from "react-native";
 import { styles } from "./style";
 
 export interface IExpenseProp {

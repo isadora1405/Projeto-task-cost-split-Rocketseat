@@ -1,11 +1,12 @@
+import { colors, fontFamily } from "@/styles";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   card: {
-    backgroundColor: "#121216",
+    backgroundColor: colors.gray700,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: "#1b1b21",
+    borderColor: colors.gray600,
     padding: 16,
     marginBottom: 12,
   },
@@ -17,22 +18,22 @@ export const styles = StyleSheet.create({
   },
   title: {
     flex: 1,
-    fontFamily: "Inter_600SemiBold",
+    fontFamily: fontFamily.semiBold,
     fontSize: 16,
-    color: "#fafafa",
+    color: colors.gray100,
   },
   priceContainer: {
     alignItems: "flex-end",
   },
   totalPrice: {
-    fontFamily: "Inter_500Medium",
+    fontFamily: fontFamily.semiBold,
     fontSize: 14,
-    color: "#e1e1e6",
+    color: colors.gray200,
   },
   perPersonPrice: {
-    fontFamily: "Inter_400Regular",
+    fontFamily: fontFamily.regular,
     fontSize: 12,
-    color: "#92929a",
+    color: colors.gray300,
     marginTop: 2,
   },
   bottomRow: {
@@ -42,7 +43,7 @@ export const styles = StyleSheet.create({
     marginTop: 12,
     paddingTop: 12,
     borderTopWidth: 1,
-    borderTopColor: "#1b1b21",
+    borderTopColor: colors.gray600,
   },
   avatarStack: {
     flexDirection: "row",
@@ -52,16 +53,16 @@ export const styles = StyleSheet.create({
     width: 28,
     height: 28,
     borderRadius: 14,
-    backgroundColor: "#1b1b21",
+    backgroundColor: colors.gray600,
     borderWidth: 1,
-    borderColor: "#121216",
+    borderColor: colors.gray700,
     justifyContent: "center",
     alignItems: "center",
   },
   avatarText: {
-    fontFamily: "Sora_700Bold",
+    fontFamily: fontFamily.semiBold,
     fontSize: 9,
-    color: "#e1e1e6",
+    color: colors.gray200,
   },
   statusBadge: {
     paddingHorizontal: 8,
@@ -69,7 +70,7 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
   },
   statusText: {
-    fontFamily: "Inter_400Regular",
+    fontFamily: fontFamily.regular,
     fontSize: 12,
   },
 });
