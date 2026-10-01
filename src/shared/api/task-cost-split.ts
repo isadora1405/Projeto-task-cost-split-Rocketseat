@@ -2,7 +2,9 @@ import axios from "axios";
 import { Platform } from "react-native";
 import { AppError } from "../helpers/AppError";
 
-const IP_MAQUINA = "10.0.0.114";
+//A config abaixo é para rodar a apliicação em device físico. Caso utilize emulador, fazer ajustes necessários
+
+const IP_MAQUINA = ""; //Adicionar o IP da máquina para rodar o App
 
 const baseURL = Platform.select({
   ios: `http://${IP_MAQUINA}:8080/api/v1`,

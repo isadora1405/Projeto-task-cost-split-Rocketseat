@@ -2,6 +2,8 @@ import { formatCurrency } from "@/shared/utils/formatCurrency";
 import { colors } from "@/styles";
 import { View, Text } from "react-native";
 import { styles } from "./style";
+import { getStatusStyle } from "@/shared/utils/getStatusStyle";
+import { mapBackendStatus } from "@/shared/utils/mapBackendStatus";
 
 export interface IExpenseProp {
   id: string;
@@ -21,39 +23,7 @@ interface ExpenseCardProps {
   expense: IExpenseProp;
 }
 
-const mapBackendStatus = (status?: string) => {
-  if (!status) return "Pendente";
-  const s = status.toLowerCase();
-  if (s === "paid" || s === "pago") return "Pago";
-  if (s === "partial" || s === "parcial") return "Parcial";
-  return "Pendente";
-};
-
 export function ExpenseCard({ expense }: ExpenseCardProps) {
-  const getStatusStyle = (status: string) => {
-    switch (status) {
-      case "Pago":
-        return {
-          bg: colors.successLow,
-          text: colors.successLight,
-          border: colors.gray600,
-        };
-      case "Pendente":
-        return {
-          bg: colors.dangerLow,
-          text: colors.dangerLight,
-          border: colors.gray600,
-        };
-      case "Parcial":
-        return {
-          bg: colors.alertLow,
-          text: colors.alertLight,
-          border: colors.gray600,
-        };
-      default:
-        return { bg: "#1b1b21", text: "#92929a", border: colors.gray600 };
-    }
-  };
   const statusStyle = getStatusStyle(mapBackendStatus(expense.status));
 
   return (

@@ -12,44 +12,13 @@ import { colors } from "@/styles";
 import { CloseIcon, PencilIcon, TrashIcon } from "@/components/Icons";
 import { formatCurrency } from "@/shared/utils/formatCurrency";
 import { getInitials } from "@/shared/utils/getInitials";
+import { getStatusStyle } from "@/shared/utils/getStatusStyle";
+import { mapBackendStatus } from "@/shared/utils/mapBackendStatus";
 
 interface ExpenseDetailsSheetProps {
   activityId: string;
   expenseId: string;
 }
-
-const mapBackendStatus = (status?: string) => {
-  if (!status) return "Pendente";
-  const s = status.toLowerCase();
-  if (s === "paid" || s === "pago") return "Pago";
-  if (s === "partial" || s === "parcial") return "Parcial";
-  return "Pendente";
-};
-
-const getStatusStyle = (status: string) => {
-  switch (status) {
-    case "Pago":
-      return {
-        bg: colors.successLow,
-        text: colors.successLight,
-        border: colors.gray600,
-      };
-    case "Pendente":
-      return {
-        bg: colors.dangerLow,
-        text: colors.dangerLight,
-        border: colors.gray600,
-      };
-    case "Parcial":
-      return {
-        bg: colors.alertLow,
-        text: colors.alertLight,
-        border: colors.gray600,
-      };
-    default:
-      return { bg: "#1b1b21", text: "#92929a", border: colors.gray600 };
-  }
-};
 
 export function ExpenseDetailsSheet({
   activityId,
